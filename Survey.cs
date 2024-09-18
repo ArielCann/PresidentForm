@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace PresidentForm
 {
     public partial class Survey : Form
@@ -60,17 +59,12 @@ namespace PresidentForm
         private void button1_Click(object sender, EventArgs e)
         {
             DateTime today = DateTime.Today;
-            bool age = (today.Year - birthday.Value.Year >= 35);
-            Console.WriteLine(today.Year - birthday.Value.Year);
-            bool residency = ResidencyDial.Value >= 14;
-            Console.WriteLine(ResidencyDial.Value);
+            int age = (today.Year - birthday.Value.Year);
+            int residency = Decimal.ToInt32(ResidencyDial.Value);
             bool terms = termDial.Value < 2;
-            Console.WriteLine(termDial.Value);
-            bool not_reblled = !rebel.Checked;
-            Console.WriteLine(rebel.Checked);
+            bool rebelled = rebel.Checked;
             bool citizen = CitizenCheckBox.Checked;
-            Console.WriteLine(CitizenCheckBox.Checked);
-            if (age && residency && citizen && terms && not_reblled)
+            if (true)
             {
                 result.Text = "You are eligible to be President!";
             }
